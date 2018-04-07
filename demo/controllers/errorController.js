@@ -23,6 +23,21 @@ ErrorController.create = (req, res) => {
     });
 };
 
+ErrorController.list = (req, res) => {
+    errorService.list({})
+    .then((errors) => {
+        if (errors) {
+            res.json(errors);
+        } else {
+            res.end('No Errors found.');
+        }
+    })
+    .catch((err) => {
+        log.error(`Listing Errors error: ${err}`);
+        res.end('Listing Errors error.');
+    });
+};
+
 ErrorController.find = (req, res) => {
     errorService.find({_id: req.body._id})
     .then((Error) => {

@@ -17,6 +17,7 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get('/list', bookController.list); 
 router.post('/create', bookController.create); 
 router.post('/find', bookController.find); 
 

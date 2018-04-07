@@ -17,6 +17,7 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get('/list', errorController.list); 
 router.post('/create', errorController.create); 
 router.post('/find', errorController.find); 
 

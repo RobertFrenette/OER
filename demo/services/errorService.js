@@ -14,6 +14,16 @@ ErrorService.create = (errorObj) => {
         });
 };
 
+ErrorService.list = (searchParams) => {
+    return Error.find(searchParams)
+        .then((errors) => {
+            return errors;
+        })
+        .catch((err) => {
+            throw err;
+        });
+};
+
 ErrorService.find = (error) => {
     return Error.findOne({_id: error._id})
         .then((error) => {

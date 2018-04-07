@@ -15,6 +15,16 @@ BookService.create = (bookObj) => {
         });
 };
 
+BookService.list = (searchParams) => {
+    return Book.find(searchParams)
+        .then((books) => {
+            return books;
+        })
+        .catch((err) => {
+            throw err;
+        });
+};
+
 BookService.find = (bookObj) => {
     return Book.findOne({_id: bookObj._id})
         .then((book) => {
