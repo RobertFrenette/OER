@@ -39,9 +39,9 @@ ErrorController.list = (req, res) => {
 };
 
 ErrorController.find = (req, res) => {
-    errorService.find({_id: req.body._id})
-    .then((Error) => {
-        res.json(Error);
+    errorService.find({_id: req.params.error_id})
+    .then((error) => {
+        res.json(error);
     })
     .catch((err) => {
         log.error(`Reading Error error: ${err}`);

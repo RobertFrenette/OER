@@ -33,7 +33,7 @@ BookController.list = (req, res) => {
 };
 
 BookController.find = (req, res) => {
-    bookService.find({_id: req.body._id})
+    bookService.find({_id: req.params.book_id})
     .then((book) => {
         res.json(book);
     })

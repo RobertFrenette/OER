@@ -3,7 +3,6 @@ var Book = require('../models/Book');
 var BookService = {};
 
 BookService.create = (bookObj) => {
-    console.log(bookObj);
     var book = new Book(bookObj);
 
     return book.save()

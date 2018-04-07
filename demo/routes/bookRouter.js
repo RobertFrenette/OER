@@ -19,6 +19,6 @@ router.use((req, res, next) => {
 
 router.get('/list', bookController.list); 
 router.post('/create', bookController.create); 
-router.post('/find', bookController.find); 
+router.get('/find/:book_id', bookController.find); 
 
 module.exports = router;
