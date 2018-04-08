@@ -32,4 +32,24 @@ UserController.login = (req, res) => {
     });
 };
 
+UserController.reset = (req, res) => {
+    userService.reset({
+        username: req.body.username,
+        email:    req.body.email,
+        password: req.body.password
+    })
+    .then((user) => {
+        if (user !== null) {
+            res.end(JSON.stringify({"success: ": true})); // success
+        } else {
+            log.info(`Password Reset Unsucessful for User: ${username}, ${password} -- User Not found`);
+            res.status(403).end(JSON.stringify({"Error: ": "Password reset error."}));
+        }
+    })
+    .catch((err) => {
+        log.error(`Resetting User Password error: ${err}`);
+        res.status(403).end(JSON.stringify({"Error: ": "Password Reset error."}));
+    });
+  };
+
 module.exports = UserController;

@@ -22,6 +22,7 @@ router.use((req, res, next) => {
 // User Routes
 router.post('/user/register', usercontroller.register); // Register a User
 router.post('/user/login', usercontroller.login);  // User Login
+router.post('/user/reset', usercontroller.reset);  // User Password Reset
 
 // Book Routes
 router.get('/book/list', bookController.list); // Get all Books

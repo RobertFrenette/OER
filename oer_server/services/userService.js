@@ -24,4 +24,25 @@ UserService.login = (userObj) => {
         });
 };
 
+UserService.reset = (userObj) => {
+    var query = { username: userObj.username, email: userObj.email };
+
+    return User.findOneAndUpdate(query,
+        // the change to be made
+        {password: userObj.password},
+    
+        // an option that asks mongoose to return the updated version of the doc
+        {new: true},
+    
+        // the callback function
+        (err, user) => {
+          if (err) {
+            throw err;
+          } else {
+            return user;
+          }
+        }
+      );
+};
+
 module.exports = UserService;
