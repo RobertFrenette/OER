@@ -9,26 +9,22 @@ BookController.create = (req, res) => {
         isbn: req.body.isbn
     })
     .then((b) => {
-        res.json(b);
+        res.json({"_id": b._id});
     })
     .catch((err) => {
         log.error(`Creating Book error: ${err}`);
-        res.end('Creating Book error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Creating Book error."}));
     });
 };
 
 BookController.list = (req, res) => {
     bookService.list({})
     .then((books) => {
-        if (books) {
-            res.json(books);
-        } else {
-            res.end('No Books found.');
-        }
+        res.json(books);
     })
     .catch((err) => {
         log.error(`Listing Books error: ${err}`);
-        res.end('Listing Books error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Listing Books error."}));
     });
 };
 
@@ -39,7 +35,7 @@ BookController.find = (req, res) => {
     })
     .catch((err) => {
         log.error(`Reading Book error: ${err}`);
-        res.end('Reading Book error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Reading Book error."}));
     });
 };
 

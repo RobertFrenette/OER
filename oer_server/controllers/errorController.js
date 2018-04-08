@@ -1,7 +1,7 @@
-// In thei context, "Error" is the actual error found in the book
+// In this context, "Error" is the actual error found in the book
 // it is NOT a Mongo DB Error (err)
 
-var log         = require('log-util');
+var log          = require('log-util');
 var errorService = require('../services/errorService');
  
 var ErrorController = {};
@@ -15,11 +15,11 @@ ErrorController.create = (req, res) => {
         desc: req.body.desc
     })
     .then((e) => {
-        res.json(e);
+        res.json({"_id": e._id});
     })
     .catch((err) => {
         log.error(`Creating Error error: ${err}`);
-        res.end('Creating Error error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Creating Error error."}));
     });
 };
 
@@ -34,7 +34,7 @@ ErrorController.list = (req, res) => {
     })
     .catch((err) => {
         log.error(`Listing Errors error: ${err}`);
-        res.end('Listing Errors error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Listing Errors error."}));
     });
 };
 
@@ -45,7 +45,7 @@ ErrorController.find = (req, res) => {
     })
     .catch((err) => {
         log.error(`Reading Error error: ${err}`);
-        res.end('Reading Error error.');
+        res.status(403).end(JSON.stringify({"Error: ": "Finding Error error."}));
     });
 };
 

@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
  
 var BookSchema = new mongoose.Schema({
-    title: String,
-    isbn: String
+    title: {type: String, required: true },
+    isbn:  {type: String, required: true, index: { unique: true } }
 });
  
 module.exports = mongoose.model('Book', BookSchema);

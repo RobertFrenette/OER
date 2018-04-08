@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
  
 var ErrorSchema = new mongoose.Schema({
-    user_id: String,
-    book_id: String,
-    type: String,
-    page: String,
-    desc: String
+    user_id: {type: String, required: true },
+    book_id: {type: String, required: true },
+    type:    {type: String, required: true },
+    page:    {type: String, required: true },
+    desc:    {type: String, required: true }
 });
  
 module.exports = mongoose.model('Error', ErrorSchema);
