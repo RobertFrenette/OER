@@ -49,4 +49,27 @@ ErrorController.find = (req, res) => {
     });
 };
 
+ErrorController.update = (req, res) => {
+    errorService.update({
+        _id:   req.body.error_id,
+        user_id: req.body.user_id,
+        book_id: req.body.book_id,
+        type: req.body.type,
+        page: req.body.page,
+        desc: req.body.desc
+    })
+    .then((e) => {
+        if (e !== null) {
+            res.json({"_id": e._id});
+        } else {
+            log.error(`Error Update Unsucessful for Book _id: ${req.body.book_id} -- Error Not found`);
+            res.status(403).end(JSON.stringify({"Error: ": "Error Update error."}));
+        }
+    })
+    .catch((err) => {
+        log.error(`Error Update error: ${err}`);
+        res.status(403).end(JSON.stringify({"Error: ": "Error Update error."}));
+    });
+  };
+
 module.exports = ErrorController;

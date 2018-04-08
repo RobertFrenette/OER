@@ -34,4 +34,29 @@ ErrorService.find = (error) => {
         });
 };
 
+ErrorService.update = (errorObj) => {
+    var query = { _id: errorObj._id, user_id: errorObj.user_id, book_id: errorObj.book_id };
+
+    return Error.findOneAndUpdate(query,
+        // the change to be made
+        {
+            type: errorObj.type,
+            page: errorObj.page,
+            desc: errorObj.desc
+        },
+    
+        // an option that asks mongoose to return the updated version of the doc
+        {new: true},
+    
+        // the callback function
+        (err, user) => {
+          if (err) {
+            throw err;
+          } else {
+            return user;
+          }
+        }
+      );
+};
+
 module.exports = ErrorService;

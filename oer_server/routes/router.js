@@ -13,7 +13,7 @@ router.use((req, res, next) => {
     'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers'
   });
   // check for Preflight
-  if(req.method === 'OPTIONS'){
+  if(req.method === 'OPTIONS') {
     return res.status(200).end();
   }
   next();
@@ -22,7 +22,7 @@ router.use((req, res, next) => {
 // User Routes
 router.post('/user/register', usercontroller.register); // Register a User
 router.post('/user/login', usercontroller.login);  // User Login
-router.post('/user/reset', usercontroller.reset);  // User Password Reset
+router.put('/user/reset', usercontroller.reset);  // User Password Reset
 
 // Book Routes
 router.get('/book/list', bookController.list); // Get all Books
@@ -35,5 +35,6 @@ router.get('/book/find/:book_id', bookController.find); // Get a specific Book b
 router.get('/error/list', errorController.list); // Get all Errors
 router.post('/error/create', errorController.create); // Insert a new Error
 router.get('/error/find/:error_id', errorController.find); // Get a specific Error by Error _id
+router.put('/error/update', errorController.update);  // Update an Error
 
 module.exports = router;
