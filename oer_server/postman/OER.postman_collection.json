@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "2d008341-be05-4ab0-a384-c517565a04f8",
+		"name": "OER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/user/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"FooBar\",\n  \"email\": \"foobar@oer.com\",\n  \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				},
+				"description": "Register a User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/user/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"FooBar\",\n\t\"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				},
+				"description": "User Login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/user/reset",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"BizBaz\",\n\t\"email\": \"bizbaz@oer.com\",\n\t\"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"reset"
+					]
+				},
+				"description": "Password Reset"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/book/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Book Two\",\n    \"isbn\": \"222-2222222222\"\n}\n    "
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/book/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"create"
+					]
+				},
+				"description": "Create a Book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/book/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/book/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"list"
+					]
+				},
+				"description": "List all Books"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/book/find/5aca1acfa12a6204dcf3840q",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/book/find/5aca1acfa12a6204dcf3840q",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"book",
+						"find",
+						"5aca1acfa12a6204dcf3840q"
+					]
+				},
+				"description": "Find a specific Book by _id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/error/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"5aca1a02162c6604d01e7d2f\",\n    \"book_id\": \"5aca1aa3a12a6204dcf38400\",\n    \"type\": \"Omission\",\n    \"page\": \"33\",\n    \"desc\": \"This is yet anoter test...\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/error/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"error",
+						"create"
+					]
+				},
+				"description": "Create an Error"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/error/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/error/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"error",
+						"list"
+					]
+				},
+				"description": "List all Errors"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/error/find/5aca1b48a12a6204dcf38404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/error/find/5aca1b48a12a6204dcf38404",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"error",
+						"find",
+						"5aca1b48a12a6204dcf38404"
+					]
+				},
+				"description": "Find a specific Error by _id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/error/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"error_id\": \"5aca1bb2a12a6204dcf38406\",\n    \"user_id\": \"5aca1a02162c6604d01e7d2f\",\n    \"book_id\": \"5aca1aa3a12a6204dcf38400\",\n    \"type\": \"Omission\",\n    \"page\": \"333\",\n    \"desc\": \"This is another edited desc test...\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/error/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"error",
+						"update"
+					]
+				},
+				"description": "Update an Error"
+			},
+			"response": []
+		}
+	]
+}
