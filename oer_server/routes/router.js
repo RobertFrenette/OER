@@ -36,5 +36,6 @@ router.get('/error/list', errorController.list); // Get all Errors
 router.post('/error/create', errorController.create); // Insert a new Error
 router.get('/error/find/:error_id', errorController.find); // Get a specific Error by Error _id
 router.put('/error/update', errorController.update);  // Update an Error
+router.get('/error/list/:user_id', errorController.findUserErrors); // Get all Errors for a specific User by _id
 
 module.exports = router;

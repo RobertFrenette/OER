@@ -70,6 +70,21 @@ ErrorController.update = (req, res) => {
         log.error(`Error Update error: ${err}`);
         res.status(403).end(JSON.stringify({"Error: ": "Error Update error."}));
     });
-  };
+};
+
+ErrorController.findUserErrors = (req, res) => {
+    errorService.list({user_id: req.params.user_id})
+    .then((errors) => {
+        if (errors) {
+            res.json(errors);
+        } else {
+            res.end('No Errors found.');
+        }
+    })
+    .catch((err) => {
+        log.error(`Finding User Errors error: ${err}`);
+        res.status(403).end(JSON.stringify({"Error: ": "Finding User Errors error."}));
+    });
+};
 
 module.exports = ErrorController;

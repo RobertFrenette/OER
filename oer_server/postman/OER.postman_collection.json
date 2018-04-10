@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "2d008341-be05-4ab0-a384-c517565a04f8",
 		"name": "OER",
+		"_postman_id": "8b704aab-b558-ec29-c396-738afdd5da84",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -134,7 +135,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/api/book/list",
 					"protocol": "http",
@@ -157,7 +161,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/api/book/find/5aca1acfa12a6204dcf3840q",
 					"protocol": "http",
@@ -212,7 +219,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:3000/api/error/list",
 					"host": [
@@ -234,7 +244,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:3000/api/error/find/5aca1b48a12a6204dcf38404",
 					"host": [
@@ -280,6 +293,29 @@
 					]
 				},
 				"description": "Update an Error"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/error/list/5aca254d8badfd067036a7b1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/error/list/5aca254d8badfd067036a7b1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"error",
+						"list",
+						"5aca254d8badfd067036a7b1"
+					]
+				},
+				"description": "Find all Errors for a specific User by _id"
 			},
 			"response": []
 		}
